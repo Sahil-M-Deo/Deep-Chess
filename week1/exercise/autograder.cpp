@@ -7,12 +7,21 @@ using namespace std;
 
     Students should fill only the solve function below.
 */
-
+#define v1d vector<long long>
 string solve(int n, vector<long long> a) {
     // TODO: Fill this function.
     // Return one of: "Player 1" or "Player 2" or "Draw"
-
-    return "";
+	v1d dp(n);
+	dp[n-1]=a[n-1];
+	for(int i=n-2;i>=0;i--)
+		dp[i]=max(a[i]-dp[i+1],a[i]+a[i+1]);
+	
+	if(dp[0]>0)
+    	return "Player 1";
+	else if(dp[0]==0)
+		return "Draw";
+	else
+		return "Player 2";
 }
 
 static string trim(const string &s) {
