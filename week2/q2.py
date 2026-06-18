@@ -296,7 +296,7 @@ def play_notakto(num_boards=2,human_player=-1):
             print("BOT LOSES, HUMAN WINS")
     
 if __name__=="__main__":
-    root=History(num_boards=2,history=[])
+    root=History(num_boards=3,history=[])
     value=alphabeta(root,-math.inf,math.inf)
     print("FINAL VALUE:",value)
     print("STATES VISITED:",visited_states_count)
